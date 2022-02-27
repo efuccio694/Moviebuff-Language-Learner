@@ -24,6 +24,10 @@ After providing a source srt file, the user will be able to pause the movie, and
 *Flashcards will be written to Flashcards.txt in this format:*
 Flashcard Number | Original Text | Translated to English Text
 
+### Play Flashcards
+#### Practice through all the flashcards you created through the terminal.
+If you have created flashcards using the Flashcard Creator mode, the program will run through them in order for you to practice. Type `y` to flip each flashcard.
+
 ## How we built it
 
 ## Challenges we ran into
@@ -33,3 +37,4 @@ Flashcard Number | Original Text | Translated to English Text
 ## What we learned
 
 ## What's next for Moviebuff Language Learner
+The next thing we would like to add to our program in the future would be a GUI so that Moviebuff Language Learner will be easier to use and more visually appealing. We would also like the program to automate the renaming of the .srt file to a .txt file so that the user will not have to prepare their .srt file in that way before running the program. 

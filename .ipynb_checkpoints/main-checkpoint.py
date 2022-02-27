@@ -182,13 +182,8 @@ def srt_to_list (srt):
 
 
 def find_subtitle(final_list):
-    hours_user_time = input("Input the hours: ")
-    minutes_user_time = input("Input the minutes: ")
-    seconds_user_time = input("Input the seconds: ")
-
-    user_time = hours_user_time + minutes_user_time + seconds_user_time
-
-    user_time = int(user_time)
+    user_time = input("Input the current timestamp in this format: Hours:Minutes:Seconds \nExample: 01:04:45 ")
+    user_time = int(user_time.replace(':', ''))
 
     index = 0
     for values in final_list:

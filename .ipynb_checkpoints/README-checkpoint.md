@@ -29,8 +29,10 @@ Flashcard Number | Original Text | Translated to English Text
 If you have created flashcards using the Flashcard Creator mode, the program will run through them in order for you to practice. Type `y` to flip each flashcard.
 
 ## How we built it
+We used Visual Studio Code and a language translation library.
 
 ## Challenges we ran into
+We had to brainstorm ways to collect, sort, present the necessary information from a plain .srt file, which led to a lot of messing with formatting and making sure our code didn't go out of range.
 
 ## Accomplishments that we're proud of
 

@@ -3,13 +3,20 @@
 """pip install googletrans==3.1.0a0"""
 import random
 from googletrans import Translator
-MAX_CARDS = 500
+
+
+MAX_CARDS = 500 #SETS A MAXIMUM AMOUNT OF FLASHCARDS TO 500
+
+#creates a Flashcard class with the card_number, selected_word (an untranslated word), and translated_selected_word (the translated version of the selected word)
+#play_flashcard method allows the user to practice the flashcards they created in the terminal
 class Flashcard:
+    #initializer method
     def __init__(self, card_number, selected_word, translated_selected_word):
         self.card_number = card_number
         self.selected_word = selected_word
         self.translated_selected_word = translated_selected_word
     
+    #play_flashcard method allows the user to practice the flashcards in the terminal
     def play_flashcard(self):
         print(f'Word: {self.selected_word}')
         flip = input('Flip? (y/n): ')
@@ -17,17 +24,19 @@ class Flashcard:
             print(f'Meaning: {self.translated_selected_word}\n')
 
 def main():
-    file_name = input("Enter entire script file name with extension: ")
+    
     
     #checks if the input is a valid file name
     file_name = checkfile(file_name)
 
-    run_mode = set_run_mode()
-    if run_mode == '1':
+    run_mode = set_run_mode() #prompts the user for the operating mode
+    if run_mode == '1': #Live Translate Mode
+        file_name = input("Enter entire script file name with extension: ")
         realtime_translator(file_name)
-    elif run_mode == '2':
+    elif run_mode == '2': #Create Flashcards Mode
+        file_name = input("Enter entire script file name with extension: ")
         flashcard_creator(file_name)
-    elif run_mode == '3':
+    elif run_mode == '3': #Play Translate Mode
         play_flashcards()
     else:
         print('Error: Improper run mode. Restart program and try again.')

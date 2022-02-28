@@ -6,7 +6,8 @@ import random
 from googletrans import Translator
 
 
-MAX_CARDS = 500 #SETS A MAXIMUM AMOUNT OF FLASHCARDS TO 500
+# MAX_CARDS = 500 #SETS A MAXIMUM AMOUNT OF FLASHCARDS TO 500
+num_of_cards = 0
 
 #creates a Flashcard class with the card_number, selected_word (an untranslated word), and translated_selected_word (the translated version of the selected word)
 #play_flashcard method allows the user to practice the flashcards they created in the terminal
@@ -47,7 +48,7 @@ def main():
         file_name = checkfile(file_name)
 
         #runs the flashcard_creator function
-        flashcard_creator(file_name)
+        flashcard_creator(file_name, num_of_cards)
 
     elif run_mode == '3': #Play Translate Mode
         #runs the play_flashcards function
@@ -80,7 +81,7 @@ def realtime_translator(file_name):
     translated_text = translator(text)
     print(translated_text)
 
-def flashcard_creator(file_name):
+def flashcard_creator(file_name, num_of_cards):
     srt_to_list(file_name) #converts srt to list
 
     times_of_run = int(input("How many flashcards would you like to make?: "))
@@ -101,7 +102,8 @@ def flashcard_creator(file_name):
         selected_word = foreign_words[int(input())] #gets the selected_word from user
         translated_selected_word = translator(selected_word) #translates selected_word
         #print(translated_selected_word)
-        card_number = random.randint(0, MAX_CARDS)
+        num_of_cards+=1
+        card_number = int(num_of_cards)
         card_number = Flashcard(card_number, selected_word, translated_selected_word )
         flashcard_file = open('Flashcards.txt', 'a')
         flashcard_file.write(f'{card_number.card_number} {card_number.selected_word} {card_number.translated_selected_word} \n')
@@ -207,7 +209,9 @@ def srt_to_list (srt):
 
 
 def find_subtitle(final_list):
+    #prompts the user for the timestamp
     user_time = input("Input the current timestamp in the format Hours:Minutes:Seconds\nExample: 01:04:45\nTimestamp: ")
+    #turns the timestamp into an integer that can be used to compare where the subtitle is
     user_time = int(user_time.replace(':', ''))
 
     index = 0

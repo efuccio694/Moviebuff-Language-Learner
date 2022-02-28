@@ -211,7 +211,9 @@ def srt_to_list (srt):
 
 
 def find_subtitle(final_list):
+    #prompts the user for the timestamp
     user_time = input("Input the current timestamp in the format Hours:Minutes:Seconds\nExample: 01:04:45\nTimestamp: ")
+    #turns the timestamp into an integer that can be used to compare where the subtitle is
     user_time = int(user_time.replace(':', ''))
 
     index = 0

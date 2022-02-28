@@ -1,11 +1,14 @@
-#IN THIS BRANCH I WILL ATTEMPT TO CREATE A GUI FOR OUR PROGRAM
-
 #Moviebuff-Language-Learner
 #Authored by Evan Fuccio and Brayden Yan
 """pip install googletrans==3.1.0a0"""
+
+#IN THIS BRANCH I WILL ATTEMPT TO CREATE A GUI FOR OUR PROGRAM
+
 import sys
-import random
+#imports the googletrans library to translate our subtitles
 from googletrans import Translator
+#imports everything from the tkinter library that will allow us to create a GUI for our program
+from tkinter import *
 
 
 # MAX_CARDS = 500 #SETS A MAXIMUM AMOUNT OF FLASHCARDS TO 500
@@ -218,11 +221,13 @@ def find_subtitle(final_list):
 
     index = 0
     for values in final_list:
-        if isinstance(values, int) and isinstance(final_list[index+1], int):
+        if isinstance(values, int) and isinstance(final_list[index+1], int): #checks if the current and next values are integers
             if index != (len(final_list) - 1) and index != len(final_list) and user_time >= final_list[index] and user_time <= final_list[index+1]:
                 print(final_list[index+2])
                 return final_list[index+2] #the associated subtitle
-
+            else: #if there is no timestamp for that timestamp
+                print("Error: There does not seem to be a subtitle for that timestamp.")
+                sys.exit() #exits the program
         index +=1
 
 main()

@@ -1,5 +1,3 @@
-#IN THIS BRANCH I WILL ATTEMPT TO CREATE A GUI FOR OUR PROGRAM
-
 #Moviebuff-Language-Learner
 #Authored by Evan Fuccio and Brayden Yan
 """pip install googletrans==3.1.0a0"""

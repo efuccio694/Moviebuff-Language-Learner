@@ -1,6 +1,9 @@
+#IN THIS BRANCH I WILL ATTEMPT TO CREATE A GUI FOR OUR PROGRAM
+
 #Moviebuff-Language-Learner
 #Authored by Evan Fuccio and Brayden Yan
 """pip install googletrans==3.1.0a0"""
+import sys
 import random
 from googletrans import Translator
 
@@ -25,22 +28,35 @@ class Flashcard:
 
 def main():
     
-    
-    #checks if the input is a valid file name
-    file_name = checkfile(file_name)
+
 
     run_mode = set_run_mode() #prompts the user for the operating mode
     if run_mode == '1': #Live Translate Mode
-        file_name = input("Enter entire script file name with extension: ")
+        #prompts the user for a file name
+        file_name = input("Enter entire script file name with extension: ")\
+        
+        #checks if the input is a valid file name
+        file_name = checkfile(file_name)
+
+        #runs the realtime_translator function
         realtime_translator(file_name)
+
     elif run_mode == '2': #Create Flashcards Mode
+        #prompts the user for a file name
         file_name = input("Enter entire script file name with extension: ")
+
+        #checks if the input is a valid file name
+        file_name = checkfile(file_name)
+
+        #runs the flashcard_creator function
         flashcard_creator(file_name)
+
     elif run_mode == '3': #Play Translate Mode
+        #runs the play_flashcards function
         play_flashcards()
     else:
         print('Error: Improper run mode. Restart program and try again.')
-
+        sys.exit(0) #closes the program
 
     
     # #converts srt file to usable list
@@ -69,7 +85,7 @@ def realtime_translator(file_name):
 def flashcard_creator(file_name):
     srt_to_list(file_name) #converts srt to list
 
-    times_of_run = int(input("How many flashcards would you like to make?"))
+    times_of_run = int(input("How many flashcards would you like to make?: "))
     
     for i in range(0,times_of_run):
 
@@ -193,7 +209,7 @@ def srt_to_list (srt):
 
 
 def find_subtitle(final_list):
-    user_time = input("Input the current timestamp in this format: Hours:Minutes:Seconds \nExample: 01:04:45 ")
+    user_time = input("Input the current timestamp in the format Hours:Minutes:Seconds\nExample: 01:04:45\nTimestamp: ")
     user_time = int(user_time.replace(':', ''))
 
     index = 0

@@ -4,7 +4,7 @@
 ## Inspiration
 This project was inspired by my great grandmother who, after immigrating to Pittsburgh from Germany, learned English through watching movies at her local movie theater. While at the time, this was the only way to view movies, technology has now allowed us to view films at home. I wanted to create a program that would make learning new languages through film, as my great grandmother did, easier, and allow for people to practice foreign languages and expand their knowledge through viewing films and creating associated flashcards.
 ## How to install
-To install first you will need to install the google translate api. To install type in the command
+To install first you will need to install the google translate api. To install type in the command   
 `pip install googletrans==3.1.0a0`
 
 Then you will need to clone the repository using  

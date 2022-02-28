@@ -1,3 +1,5 @@
+#Moviebuff-Language-Learner
+#Authored by Evan Fuccio and Brayden Yan
 """pip install googletrans==3.1.0a0"""
 import random
 from googletrans import Translator

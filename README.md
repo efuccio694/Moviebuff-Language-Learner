@@ -12,7 +12,7 @@ Then you will need to clone the repository using
 ## Requirements
 The user will have to source the .srt subtitle file for the film in the original language. We recommend https://www.opensubtitles.org/en/search/subs to find one!  
 **The user must rename their .srt file to a .txt file in order for the program to function**  
-```Example: Amelie.srt -------> Amelie.txt ```
+```Example: Amelie.srt -------> Amelie.txt```   
 **For testing, we have provided the text file *Amelie.txt* from the french movie Amelie so you can see how the program operates.**
 ## What it does
 ### Live Translate

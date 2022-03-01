@@ -225,9 +225,9 @@ def find_subtitle(final_list):
             if index != (len(final_list) - 1) and index != len(final_list) and user_time >= final_list[index] and user_time <= final_list[index+1]:
                 print(final_list[index+2])
                 return final_list[index+2] #the associated subtitle
-            else: #if there is no timestamp for that timestamp
-                print("Error: There does not seem to be a subtitle for that timestamp.")
-                sys.exit() #exits the program
+            # else: #if there is no timestamp for that timestamp
+            #     print("Error: There does not seem to be a subtitle for that timestamp.")
+            #     sys.exit() #exits the program
         index +=1
 
 main()

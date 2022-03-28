@@ -1,5 +1,4 @@
 #import main
-
 from tkinter import *
 
 root = Tk()

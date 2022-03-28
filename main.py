@@ -11,7 +11,7 @@ from googletrans import Translator
 from tkinter import *
 
 
-# MAX_CARDS = 500 #SETS A MAXIMUM AMOUNT OF FLASHCARDS TO 500
+#initializes a variable that counts the number of cards made
 num_of_cards = 0
 
 #creates a Flashcard class with the card_number, selected_word (an untranslated word), and translated_selected_word (the translated version of the selected word)

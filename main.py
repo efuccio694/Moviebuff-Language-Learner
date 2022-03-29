@@ -30,14 +30,13 @@ class Flashcard:
         if flip == 'y':
             print(f'Meaning: {self.translated_selected_word}\n')
 
-def main():
+def super_translator(run_mode):
     
 
-
-    run_mode = set_run_mode() #prompts the user for the operating mode
+    #run_mode = set_run_mode() #prompts the user for the operating mode
     if run_mode == '1': #Live Translate Mode
         #prompts the user for a file name
-        file_name = input("Enter entire script file name with extension: ")\
+        file_name = input("Enter entire script file name with extension: ")
         
         #checks if the input is a valid file name
         file_name = checkfile(file_name)
@@ -70,13 +69,13 @@ def main():
     # #translates the subtitle
     # translator(text)
 
-def set_run_mode ():
-    print('Select run mode: ')
-    print('1: Realtime Translator')
-    print('2: Flashcard Creator')
-    print('3: Play Flashcards')
-    run_mode = input('Mode: ')
-    return run_mode
+# def set_run_mode ():
+#     print('Select run mode: ')
+#     print('1: Realtime Translator')
+#     print('2: Flashcard Creator')
+#     print('3: Play Flashcards')
+#     run_mode = input('Mode: ')
+#     return run_mode
 
 def realtime_translator(file_name):
     srt_to_list(file_name)
@@ -230,4 +229,4 @@ def find_subtitle(final_list):
             #     sys.exit() #exits the program
         index +=1
 
-main()
+#main()
